@@ -118,6 +118,8 @@ MonoBehaviour:
   xtime: 5
   turn_time: 0.1
   HP: 5
+  control: {fileID: 0}
+  explode: {fileID: 1200957820, guid: 68f4f20367761ea429f8d3d008143118, type: 3}
 --- !u!54 &606485824
 Rigidbody:
   m_ObjectHideFlags: 0

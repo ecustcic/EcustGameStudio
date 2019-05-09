@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class line_fly : MonoBehaviour
 {
-    public float speed = -3f;
+    public float speed = -1f;
     // Use this for initialization
 
     void Start()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
-    float speed = 30f;
+    public float speed = 30f;
     //public star star;
     public controlscript control;
     // Use this for initialization

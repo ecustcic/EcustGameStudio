@@ -16,6 +16,7 @@ public class TriggerScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if(other.gameObject.tag != "bomb")
+            Destroy(other.gameObject);
     }
 }

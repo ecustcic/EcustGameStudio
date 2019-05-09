@@ -2,26 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMcontrol : MonoBehaviour
+public class bossmusic : MonoBehaviour
 {
-    public float time1 = 55f;
+    public float time1 = 58f;
     public AudioSource bgm;
     // Start is called before the first frame update
 
     void Start()
     {
         bgm = gameObject.GetComponent<AudioSource>();
-        bgm.Play();
+        bgm.Stop();
     }
 
     // Update is called once per frame
     private void Update()
-    {
-        if (time1 >= 0)
-        { time1 -= Time.deltaTime; }
-        else
+    {   
+        time1 -= Time.deltaTime;
+        if (time1 <= -7f && bgm.isPlaying == false)
         {
-            bgm.Stop();
-        }
+            
+            bgm.loop = true;
+            bgm.Play();
+        }        
+    }
+
+    public void Time_stop()
+    {
+        bgm.Stop();
     }
 }

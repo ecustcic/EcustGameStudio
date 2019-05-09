@@ -5,11 +5,11 @@ using UnityEngine;
 public class Meteotspawn : MonoBehaviour
 {
     public float spawntime_1 = 3f;
-    public float spawndecrement = .2f;
+    public float spawndecrement = 0f;
     public float spawntime_2 = 10f;
     public float spawntime_3 = 20f;
     public float leveltime = 50f;
-    private float waittime = 6f;
+    private float waittime = 10f;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
@@ -80,31 +80,31 @@ public class Meteotspawn : MonoBehaviour
                 else if (wave_2 == 3)
                 {
                     Instantiate(enemy3, new Vector3(pos.x + 5, 8f, -2), Quaternion.identity);
-                    spawntime_3 = 2f;
+                    spawntime_3 = .5f;
                     wave_2 = 4;
                 }
                 else if (wave_2 == 4)
                 {
                     Instantiate(enemy3, new Vector3(pos.x + 4, 8f, -2), Quaternion.identity);
-                    spawntime_3 = 2f;
+                    spawntime_3 = .5f;
                     wave_2 = 5;
                 }
                 else if (wave_2 == 5)
                 {
                     Instantiate(enemy3, new Vector3(pos.x + 3, 8f, -2), Quaternion.identity);
-                    spawntime_3 = 2f;
+                    spawntime_3 = .5f;
                     wave_2 = 6;
                 }
                 else if (wave_2 == 6)
                 {
                     Instantiate(enemy3, new Vector3(pos.x - 5, 8f, -2), Quaternion.identity);
-                    spawntime_3 = 2f;
+                    spawntime_3 = .5f;
                     wave_2 = 7;
                 }
                 else if (wave_2 == 7)
                 {
                     Instantiate(enemy3, new Vector3(pos.x - 4, 8f, -2), Quaternion.identity);
-                    spawntime_3 = 2f;
+                    spawntime_3 = .5f;
                     wave_2 = 8;
                 }
                 else

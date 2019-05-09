@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250d0acdc9bb06f46b0e635383f92fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.5
+  speed: -2
   HP: 8
   control: {fileID: 0}
   enemybullet: {fileID: 10242985, guid: 821c4ff2d9a93b04ba30caf678c4284a, type: 3}
-  cooldown: 2
+  explode: {fileID: 1200957820, guid: 68f4f20367761ea429f8d3d008143118, type: 3}
+  cooldown: 0.8

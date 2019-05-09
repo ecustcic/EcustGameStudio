@@ -145,12 +145,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downtime: 20
   endtime: 0.1
-  HP: 600
+  HP: 1000
   control: {fileID: 0}
   bullet1: {fileID: 1786759864, guid: 598abf5fd535bf44f959ece1d18891fa, type: 3}
   bullet2: {fileID: 7385008299572891099, guid: e9d0f0ec405d3c94d8918594ce755c27, type: 3}
+  wave_5_bullet: {fileID: 429733279, guid: 60ab379a1552ca84f89165b8561cc2e9, type: 3}
+  wave_6_bullet: {fileID: 517165896, guid: b96db5a696b747543849105f2887a3b3, type: 3}
   jv: {fileID: 1954347547, guid: 796d8f5cefd227c4fbf41a302aeb8bda, type: 3}
   minion1: {fileID: 129, guid: 752ee10e569dbae4e852414819a40939, type: 3}
   minion2: {fileID: 1127460443, guid: 5cb1ae634448530459201bc0a0467c08, type: 3}
   warning: {fileID: 1789956677, guid: 0472297032901124f975e22409f7c449, type: 3}
+  bossmusic: {fileID: 0}
+  bossexplode: {fileID: 1200957820, guid: 3774005c8331f054e9f7f07ff81c5ff9, type: 3}
   cooldown: 0.5

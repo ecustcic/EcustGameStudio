@@ -10,6 +10,8 @@ public class shootenemy : MonoBehaviour
     public float HP = 5;
     public controlscript control;
     public GameObject enemybullet;
+    public GameObject enemybullet2;
+    public GameObject explode;
     public float cooldown = .5f;
     float elapsedTime = 0f;
     float rotate_time = 30f;
@@ -38,11 +40,12 @@ public class shootenemy : MonoBehaviour
         {
             if(rotate_time > 0)
             {
-                transform.Rotate(0f, 0f, 5f);
+                transform.Rotate(0f, 0f, -5f);
                 rotate_time -= endtime;
                 if (elapsedTime > cooldown)
                 {
                     Instantiate(enemybullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0f,0f, rotate_time * 15));
+                    Instantiate(enemybullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0f, 0f, rotate_time * 30));
                     elapsedTime = 0;
                 }
             }
@@ -60,6 +63,7 @@ public class shootenemy : MonoBehaviour
             HP -= 1;
             if (HP <= 0)
             {
+                Instantiate(explode, new Vector3(transform.position.x, transform.position.y, transform.position.z - .1f), Quaternion.identity);
                 Destroy(this.gameObject);
                 control.Explode_sound();
                 control.Addscore(2);
@@ -70,6 +74,40 @@ public class shootenemy : MonoBehaviour
             HP -= 0.5f;
             if (HP <= 0)
             {
+                Instantiate(explode, new Vector3(transform.position.x, transform.position.y, transform.position.z - .1f), Quaternion.identity);
+                Destroy(this.gameObject);
+                control.Explode_sound();
+                control.Addscore(2);
+            }
+        }
+        if (other.gameObject.tag == "lazer")
+        {
+            HP -= 0.1f;
+            if (HP <= 0)
+            {
+                Instantiate(explode, new Vector3(transform.position.x, transform.position.y, transform.position.z - .1f), Quaternion.identity);
+                Destroy(this.gameObject);
+                control.Explode_sound();
+                control.Addscore(2);
+            }
+        }
+        if (other.gameObject.tag == "lazer2")
+        {
+            HP -= 0.2f;
+            if (HP <= 0)
+            {
+                Instantiate(explode, new Vector3(transform.position.x, transform.position.y, transform.position.z - .1f), Quaternion.identity);
+                Destroy(this.gameObject);
+                control.Explode_sound();
+                control.Addscore(2);
+            }
+        }
+        if (other.gameObject.tag == "lazer3")
+        {
+            HP -= 0.3f;
+            if (HP <= 0)
+            {
+                Instantiate(explode, new Vector3(transform.position.x, transform.position.y, transform.position.z - .1f), Quaternion.identity);
                 Destroy(this.gameObject);
                 control.Explode_sound();
                 control.Addscore(2);

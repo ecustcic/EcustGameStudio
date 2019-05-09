@@ -129,13 +129,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uptime: 1
+  bome: 3
   control: {fileID: 0}
   speed: 6
-  me: {fileID: 765875948}
-  sheild: {fileID: 953552674}
+  sheild: {fileID: 0}
   bullet: {fileID: 7778931738483073507, guid: 9275de7af0961e848a73adbd17486e07, type: 3}
   smallbullet: {fileID: 533546454, guid: 0247cdfa3ac91244595dc6e613f655f9, type: 3}
   power_blue: {fileID: 1814724147, guid: 12952d389bc37e74497dd8e03263f0ea, type: 3}
+  Bome: {fileID: 6415164049269128548, guid: c4ce19894375fbc489c0570debb191aa, type: 3}
   bulletThreshold: 0.2
   power: 1
   power_kind: 1

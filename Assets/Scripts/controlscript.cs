@@ -17,33 +17,40 @@ public class controlscript : MonoBehaviour {
     public Text score;
     public Text HP;
     public Text END;
+    public Text Bomb;
+    public int fakebomb = 3;
+    private float bombcd = 1f;
     // Use this for initialization
+
     void Start () {
         explode_sound = gameObject.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(healthpoint <= 0)
+        if (bombcd >= 0)
+            bombcd -= Time.deltaTime;
+        if(healthpoint <= 0)//调用玩家死亡的函数
         {
             PlayerDied();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))//重置游戏场景
         {
             SceneManager.LoadScene("Main");
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))//切换到菜单场景
         {
-            Application.Quit(); ;
+            SceneManager.LoadScene("caidan");
         }
-        if (isRunning == true)
+        if (isRunning == true)//基本的UI
         {
             score.text = "Your score: " + playerScore.ToString();
             HP.text = "Your HP: " + healthpoint;
+            Bomb.text = "You have " + fakebomb + " BOMB left";
         }
         else if(isRunning == false && dead == true)
         {
-            END.text = "YOU DIED";
+            END.text = "菜";
             score.text = "";
             HP.text = "";
         }
@@ -51,26 +58,31 @@ public class controlscript : MonoBehaviour {
         {
             END.text = "YOU WIN\nyour score was:" + playerScore.ToString();
         }
+        if (Input.GetKeyDown(KeyCode.B) && fakebomb > 0 && bombcd <= 0)
+        {
+            fakebomb -= 1;
+            bombcd = 1f;
+        }
     }
 
-    public void Addscore(int number)
+    public void Addscore(int number)//让小怪死亡之前调用这个函数来加分，加分显示在UI上
     {
         playerScore += number;
     }
     
-    public void PlayerDied()
+    public void PlayerDied()//你死了，死了死了死翘翘了
     {
         isRunning = false;
         dead = true;
     }
 
-    public void PlayerWin()
+    public void PlayerWin()//吼吼你赢了
     {
         isRunning = false;
         win = true;
     }
 
-    public void Explode_sound()
+    public void Explode_sound()//这是播放爆炸声的函数
     {
         explode_sound.Play();
     }

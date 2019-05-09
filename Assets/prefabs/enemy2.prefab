@@ -119,6 +119,8 @@ MonoBehaviour:
   HP: 6
   control: {fileID: 0}
   enemybullet: {fileID: 173691143, guid: da16539beb2235544b26fe780397855c, type: 3}
+  enemybullet2: {fileID: 1954347547, guid: 796d8f5cefd227c4fbf41a302aeb8bda, type: 3}
+  explode: {fileID: 1200957820, guid: 68f4f20367761ea429f8d3d008143118, type: 3}
   cooldown: 0.3
 --- !u!54 &737873579
 Rigidbody:
